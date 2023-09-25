@@ -53,3 +53,5 @@ public class P0925 {
 				days = 28;
 		
 		System.out.println(month + " " + yearNum + " has " + days + " days.");
+	}
+}
