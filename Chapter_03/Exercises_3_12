@@ -19,3 +19,6 @@ public class P0925 {
 			System.out.println(line + " is a palindrome");
 		else
 			System.out.println(line + " is not a palindrome");
+
+	}
+}
