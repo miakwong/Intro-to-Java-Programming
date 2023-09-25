@@ -1,0 +1,28 @@
+
+		/*(Game: addition quiz) Listing 3.3, SubtractionQuiz.java, randomly generates a
+subtraction question. Revise the program to randomly generate an addition question
+with two integers less than 100.*/
+
+import java.util.Scanner;
+
+public class P0925 {
+
+	public static void main(String[] args) {
+				
+		int number1 = (int)(Math.random() * 100);
+		int number2 = (int)(Math.random() * 100);
+		Scanner in = new Scanner(System.in);
+		System.out.println("What is " + number1 + " + " + number2 + " ? ");
+		int answer = in.nextInt();
+		if( number1 + number2 == answer)
+			System.out.println("You are correct!");
+		else	{
+			System.out.println("Your answer is wrong.");
+			System.out.println(number1 + " + " + number2 + " shoule be " + (number1 + number2));
+		}
+			
+		
+		
+	}
+
+}
