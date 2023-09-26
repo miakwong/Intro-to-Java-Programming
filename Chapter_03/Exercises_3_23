@@ -1,0 +1,26 @@
+/*(Geometry: point in a rectangle?) Write a program that prompts the user to enter
+a point (x, y) and checks whether the point is within the rectangle centered at
+(0, 0) with width 10 and height 5. For example, (2, 2) is inside the rectangle and
+(6, 4) is outside the rectangle, as shown in Figure 3.7b.*/
+
+
+import java.util.Scanner;
+
+public class P0925 {
+
+	public static void main(String[] args) {
+		
+    Scanner in = new Scanner(System.in);
+		System.out.print("Enter a point with two coordinates: ");
+		double x = in.nextDouble();
+		double y = in.nextDouble();
+		in.close();
+		
+		System.out.println((x <= 5 && x >= -5) && (y <= 2.5 && y >= -2.5)?
+				"Point (" + x + ", " + y + ") is inside the rectangle":
+					 "Point (" + x + ", " + y + ") is outside the circle");
+					
+		
+	}
+
+}
