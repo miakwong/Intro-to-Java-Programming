@@ -18,7 +18,7 @@ public class P0925 {
 		double y = in.nextDouble();
 		
 		//Compare the point position and display
-		System.out.println( (y <= -0.5 * x + 100)?"The point is in the triangle": "The point is not in the triangle");
+		System.out.println( (y <= -100 / 200 * x + 100)?"The point is in the triangle": "The point is not in the triangle");
 	
 	}
 
