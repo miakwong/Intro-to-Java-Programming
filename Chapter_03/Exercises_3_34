@@ -1,0 +1,35 @@
+/*(Geometry: point on line segment) Exercise 3.32 shows how to test whether a
+point is on an unbounded line. Revise Exercise 3.32 to test whether a point is on
+a line segment. Write a program that prompts the user to enter the three points for
+p0, p1, and p2 and displays whether p2 is on the line segment from p0 to p1.*/
+
+import java.util.Scanner;
+
+public class P0925_0926 {
+
+	public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+		
+		System.out.print("Enter three points for p0, p1, and p2: ");
+		double x0 = in.nextDouble();
+		double y0 = in.nextDouble();
+		double x1 = in.nextDouble();
+		double y1 = in.nextDouble();
+		double x2 = in.nextDouble();
+		double y2 = in.nextDouble();
+		
+		//Calculate the position relationship and length of lines
+		double r = (x1 - x0) * (y2 -y0) - (x2 - x0) * (y1 - y0);
+		double line01 = Math.sqrt( Math.pow(x1 - x0, 2) + Math.pow(y1 - y0, 2) );
+		double line02 = Math.sqrt( Math.pow(x2 - x0, 2) + Math.pow(y2 - y0, 2) );
+		
+		//Diaplay
+		System.out.println( (r == 0 && line01 >= line02)? "(" + x2 + ", " + y2 + ") is on the line segment from ("
+							+ x0 + ", " + y0 + ") to (" + x1 + ", " + y1 + ")": 
+								"(" + x2 + ", " + y2 + ") is not on the line segment from ("
+								+ x0 + ", " + y0 + ") to (" + x1 + ", " + y1 + ")");
+		
+		
+	}
+
+}
