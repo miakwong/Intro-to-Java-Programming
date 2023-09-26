@@ -1,0 +1,70 @@
+		/*(Game: scissor, rock, paper) Write a program that plays the popular scissor–
+rock–paper game. (A scissor can cut a paper, a rock can knock a scissor, and
+a paper can wrap a rock.) The program randomly generates a number 0, 1, or
+2 representing scissor, rock, and paper. The program prompts the user to enter
+a number 0, 1, or 2 and displays a message indicating whether the user or the
+computer wins, loses, or draws. */
+		Scanner in = new Scanner(System.in);
+		
+		//user choose
+				System.out.println("scissor (0), rock (1), paper (2): ");
+				int user = in.nextInt();
+				
+		//computer choose
+		int computer = (int)(Math.random() * 3);
+		switch( computer )	{
+			case 0:
+				System.out.print("The computer is scissor. ");
+				break;
+			case 1:
+				System.out.print("The computer is rock. ");
+				break;
+			case 2:
+				System.out.print("The computer is paper. ");
+				break;
+		}
+		
+		//Compare result
+		if ( computer == user )	{
+			switch( user )	{
+			case 0:
+				System.out.print("You are scissor too. It is a draw.");
+				break;
+			case 1:
+				System.out.print("You are rock too. It is a draw.");
+				break;
+			case 2:
+				System.out.print("You are paper too. It is a draw.");
+				break;
+			}	}
+		else if ( computer - user == 1 || computer - user == -2)	{
+			switch( user )	{
+				case 0:
+					System.out.print("You are scissor. ");
+					break;
+				case 1:
+					System.out.print("You are rock. ");
+					break;
+				case 2:
+					System.out.print("You are paper. ");
+					break;
+			}
+			System.out.print("You lose."); }
+		else if	( user - computer == 1 || user - computer == -2)	{
+			switch( user )	{
+			case 0:
+				System.out.print("You are scissor. ");
+				break;
+			case 1:
+				System.out.print("You are rock. ");
+				break;
+			case 2:
+				System.out.print("You are paper. ");
+				break;
+		}
+			System.out.print("You won.");	}
+		else
+			System.out.println("Invalid input");
+	}
+
+}
