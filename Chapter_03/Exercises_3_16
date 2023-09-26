@@ -1,0 +1,11 @@
+		/*(Random point) Write a program that displays a random coordinate in a rectangle.
+The rectangle is centered at (0, 0) with width 100 and height 200.*/
+		int x = -50 + (int)(Math.random() * 101);
+		int y = -100 + (int)(int)(Math.random() * 201);
+		System.out.println("The random coordinate in rectangle is (" + x + ", " + y + ")");
+		
+		
+		
+	}
+
+}
