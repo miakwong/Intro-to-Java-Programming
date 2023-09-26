@@ -1,0 +1,25 @@
+/*(Geometry: points in triangle?) Suppose a right triangle is placed in a plane as
+shown below. The right-angle point is placed at (0, 0), and the other two points
+are placed at (200, 0) and (0, 100). Write a program that prompts the user to enter
+a point with x- and y-coordinates and determines whether the point is inside the
+triangle.*/
+
+
+import java.util.Scanner;
+
+public class P0925 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		
+		//Prompt user to a point
+		System.out.print("Enter a point’s x- and y-coordinates: ");
+		double x = in.nextDouble();
+		double y = in.nextDouble();
+		
+		//Compare the point position and display
+		System.out.println( (y <= -0.5 * x + 100)?"The point is in the triangle": "The point is not in the triangle");
+	
+	}
+
+}
