@@ -1,0 +1,26 @@
+/*(Current time) Revise Programming Exercise 2.8 to display the hour using a
+12-hour clock. Here is a sample run:*/
+
+import java.util.Scanner;
+
+public class P0925 {
+
+	public static void main(String[] args) {
+	
+    long totalMilliseconds = System.currentTimeMillis();
+		long totalSeconds = totalMilliseconds / 1000;
+		long currentSecond = totalSeconds % 60;
+		long totalMinutes = totalSeconds / 60;
+		long currentMinute = totalMinutes % 60;
+		long totalHours = totalMinutes / 60;
+		long currentHour = totalHours % 24;
+		
+		Scanner zone = new Scanner(System.in);
+		System.out.print("Enter the time zone offset to GMT: ");
+		int timeZone = zone.nextInt();
+		long zoneHour = (currentHour + timeZone) % 24;
+		System.out.println("The current time is " + ((zoneHour <= 12)? zoneHour: (zoneHour -12)) 
+				+ ":" + currentMinute +":" + currentSecond + ((zoneHour <= 12)? " AM": " PM"));
+	}
+
+}
