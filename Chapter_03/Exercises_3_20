@@ -1,0 +1,37 @@
+/*(Science: wind-chill temperature) Programming Exercise 2.17 gives a formula to
+compute the wind-chill temperature. The formula is valid for temperatures in the
+range between -58"F and 41°F and wind speed greater than or equal to 2. Write
+a program that prompts the user to enter a temperature and a wind speed. The
+program displays the wind-chill temperature if the input is valid; otherwise, it displays
+a message indicating whether the temperature and/or wind speed is invalid.*/
+
+
+import java.util.Scanner;
+
+public class P0925 {
+
+	public static void main(String[] args) {
+		
+    Scanner in = new Scanner(System.in);
+		System.out.println("Enter the temperature in Fahrenheit -58°F and 41°F: ");
+		double outsideTemperature = in.nextDouble();
+		System.out.println("Enter the wind speed (>= 2) in miles per hour: ");
+		double windSpeed = in.nextDouble();
+		in.close();
+		
+		if (( outsideTemperature < -58 || outsideTemperature > 41 ) && (windSpeed < 2))
+			System.out.println("The temperature and wind speed is invalid.");
+		
+		else if ( outsideTemperature < -58 || outsideTemperature > 41 )
+			System.out.println("The temperature is invalid.");
+		
+		else if (windSpeed < 2)
+			System.out.println( "The wind speed is invalid." );
+		
+		else {
+			double windChillTemperature = 35.74 + 0.6215 * outsideTemperature
+					- 35.75 * Math.pow(windSpeed, 0.16) + 
+					0.4275 * outsideTemperature * Math.pow(windSpeed, 0.16);
+			System.out.println("The wind chill index is " + windChillTemperature);
+		}
+	}
