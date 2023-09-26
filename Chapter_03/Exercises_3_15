@@ -1,0 +1,89 @@
+/*(Game: lottery) Revise Listing 3.8, Lottery.java, to generate a lottery of a threedigit
+integer. The program prompts the user to enter a three-digit integer and
+determines whether the user wins according to the following rules:
+1. If the user input matches the lottery number in the exact order, the award is
+$10,000.
+2. If all digits in the user input match all digits in the lottery number, the award
+is $3,000.
+3. If one digit in the user input matches a digit in the lottery number, the award
+is $1,000.*/
+
+
+import java.util.Scanner;
+
+public class P0925 {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Enter your lottery pick (three digits): ");
+		int pick = in.nextInt();
+		in.close();
+		int pickDigit1 = pick % 10;
+		int pickDigit2 = pick / 10 % 10;
+		int pickDigit3 = pick / 100;
+		
+		int lottery = (int)(Math.random() * 1000);
+		int lotteryDigit1 = lottery % 10;
+		int lotteryDigit2 = lottery / 10 % 10;
+		int lotteryDigit3 = lottery /100;
+	
+		System.out.println("The lottery number is " + lottery);
+		
+		//decreasing order pick
+					int temp = pickDigit1;
+					if (pickDigit1 < pickDigit2)	{
+						pickDigit1 = pickDigit2;
+						pickDigit2 = temp;
+					}
+					
+					temp = pickDigit1;
+					if (pickDigit1 < pickDigit3)	{
+						pickDigit1 = pickDigit3;
+						pickDigit3 = temp;
+					}
+					
+					temp = pickDigit2;
+					if (pickDigit2 < pickDigit3) {
+						pickDigit2 = pickDigit3;
+						pickDigit3 = temp;
+					}
+					String pickOrdered =  pickDigit1 + "" + pickDigit2 + "" + pickDigit3;
+					
+		//decreasing order lottery				
+					temp = lotteryDigit1;
+					if (lotteryDigit1 < lotteryDigit2)	{
+						lotteryDigit1 = lotteryDigit2;
+						lotteryDigit2 = temp;
+					}
+					
+					temp = lotteryDigit1;
+					if (lotteryDigit1 < lotteryDigit3)	{
+						lotteryDigit1 = lotteryDigit3;
+						lotteryDigit3 = temp;
+					}
+					
+					temp = lotteryDigit2;
+					if (lotteryDigit2 < lotteryDigit3) {
+						lotteryDigit2 = lotteryDigit3;
+						lotteryDigit3 = temp;
+					}
+					String lotteryOrdered =  lotteryDigit1 + "" + lotteryDigit2 + "" + lotteryDigit3;
+		
+		
+		if (pick == lottery)
+			System.out.println("Exact match: you win $10,000");
+		else if (pickOrdered == lotteryOrdered)
+			System.out.println("Match all digits: you win $3,000");
+		else if (pickDigit1 == lotteryDigit1 || pickDigit1 == lotteryDigit2 || 
+				pickDigit1 == lotteryDigit3 || pickDigit2 == lotteryDigit1 || pickDigit2 == lotteryDigit2 || 
+				pickDigit2 == lotteryDigit3 || pickDigit3 == lotteryDigit1 || pickDigit3 == lotteryDigit2 || 
+				pickDigit3 == lotteryDigit3 )
+			System.out.println("Match one digit: you win $1,000");
+		else
+			System.out.println("Sorry: no match");	
+		
+	}
+
+}
