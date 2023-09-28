@@ -1,0 +1,26 @@
+/*(Convert letter grade to number) Write a program that prompts the user to enter
+a letter grade A, B, C, D, or F and displays its corresponding numeric value 4, 3,
+2, 1, or 0. For other input, display invalid grade.*/
+
+import java.util.Scanner;
+
+public class P0917to19_0927{
+
+	public static void main(String[] args) {
+			Scanner in = new Scanner(System.in);
+		
+		//prompts the user to enter a letter grade A, B, C, D, or F
+		System.out.print("Enter a letter grade: ");
+		String s = in.nextLine();
+		
+		switch (s) {
+		case "A": System.out.println("The numeric value for grade " + s + " is 4");	break;
+		case "B": System.out.println("The numeric value for grade " + s + " is 3");	break;
+		case "C": System.out.println("The numeric value for grade " + s + " is 2");	break;
+		case "D": System.out.println("The numeric value for grade " + s + " is 1");	break;
+		case "F": System.out.println("The numeric value for grade " + s + " is 0");	break;
+		default: 
+			System.out.println(s + " is an invalid grade");
+		}
+	}
+}	
