@@ -1,0 +1,22 @@
+/*(Decimal to hex) Write a program that prompts the user to enter an integer between
+0 and 15 and displays its corresponding hex number. For an incorrect
+input number, display invalid input.*/
+
+import java.util.Scanner;
+
+public class P0917to19_0927{
+
+	public static void main(String[] args) {
+			Scanner in = new Scanner(System.in);
+		
+		System.out.print( "Enter a decimal value (0 to 15): " );
+		int x = in.nextInt();
+		 
+		if ( x >= 0 && x <= 9 )
+			System.out.println("The hex value is " + x);
+		else if ( x <= 15 )
+			System.out.printf("The hex value is %c", (char)(55 + x));
+		else
+			System.out.println(x + " is an invalid input");
+	}
+}	  
