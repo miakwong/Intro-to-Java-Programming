@@ -12,3 +12,5 @@ public class P0917to19_0927{
 		int num = in.nextInt();
 		
 		System.out.printf( "The character for ASCII code %d is %c", num, (char)num );
+	}
+}
