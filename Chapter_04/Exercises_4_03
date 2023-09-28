@@ -1,0 +1,62 @@
+/*(Geography: estimate areas) Use the GPS locations for Atlanta, Georgia;
+Orlando, Florida; Savannah, Georgia; and Charlotte, North Carolina in the figure
+in Section 4.1 to compute the estimated area enclosed by these four cities.*/
+
+import java.util.Scanner;
+
+public class P0917to19_0927{
+
+	public static void main(String[] args) {
+    
+    //Atlanta, Georgia
+		double latitudeA = 33.7489954;
+		double longitudeA = -84.3879824;
+		
+		//Orlando, Florida
+		double latitudeO = 28.5383355;
+		double longitudeO = -81.3792365;
+		
+		//Savannah, Georgia
+		double latitudeS = 32.0835407;
+		double longitudeS = -81.0998342;
+		
+		//Charlotte, North Carolina
+		double latitudeC = 35.2270869;
+		double longitudeC = -80.8431267;
+		
+		double radiusOfEarth = 6371.01;
+		//calculate the distance between each of two city
+		double sideAC = radiusOfEarth * Math.acos( Math.sin(Math.toRadians(latitudeA)) * Math.sin(Math.toRadians(latitudeC)) + 
+				Math.cos(Math.toRadians(latitudeA)) * Math.cos(Math.toRadians(latitudeC)) * 
+				Math.cos(Math.toRadians(longitudeA) - Math.toRadians(longitudeC)) );
+		
+		double sideAS = radiusOfEarth * Math.acos( Math.sin(Math.toRadians(latitudeA)) * Math.sin(Math.toRadians(latitudeS)) + 
+				Math.cos(Math.toRadians(latitudeA)) * Math.cos(Math.toRadians(latitudeS)) * 
+				Math.cos(Math.toRadians(longitudeA) - Math.toRadians(longitudeS)) );
+		
+		double sideAO = radiusOfEarth * Math.acos( Math.sin(Math.toRadians(latitudeA)) * Math.sin(Math.toRadians(latitudeO)) + 
+				Math.cos(Math.toRadians(latitudeA)) * Math.cos(Math.toRadians(latitudeO)) * 
+				Math.cos(Math.toRadians(longitudeA) - Math.toRadians(longitudeO)) );
+		
+		double sideSO = radiusOfEarth * Math.acos( Math.sin(Math.toRadians(latitudeS)) * Math.sin(Math.toRadians(latitudeO)) + 
+				Math.cos(Math.toRadians(latitudeS)) * Math.cos(Math.toRadians(latitudeO)) * 
+				Math.cos(Math.toRadians(longitudeS) - Math.toRadians(longitudeO)) );
+		System.out.println(sideSO);
+		double sideSC = radiusOfEarth * Math.acos( Math.sin(Math.toRadians(latitudeS)) * Math.sin(Math.toRadians(latitudeC)) + 
+				Math.cos(Math.toRadians(latitudeS)) * Math.cos(Math.toRadians(latitudeC)) * 
+				Math.cos(Math.toRadians(longitudeS) - Math.toRadians(longitudeC)) );
+		
+		//for triangle ASC
+		double sideASC = (sideAS + sideAC + sideSC) * 0.5;
+		double areaASC = Math.sqrt(Math.abs( sideASC * (sideASC - sideAC) * (sideASC - sideAS) * (sideASC - sideSC) ));
+		
+		//for triangle ASO
+		double sideASO = (sideAS + sideAC + sideSO) * 0.5;
+		double areaASO = Math.sqrt(Math.abs( sideASO * (sideASO - sideAO) * (sideASO - sideAS) * (sideASO - sideSO) ));
+		
+		double area = areaASC + areaASO;
+		System.out.println("The area by these four cities is : " + area);
+		
+		
+	}
+}	
