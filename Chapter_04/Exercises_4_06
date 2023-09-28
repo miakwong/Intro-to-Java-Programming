@@ -1,0 +1,45 @@
+/*(Random points on a circle) Write a program that generates three random points
+on a circle centered at (0, 0) with radius 40 and displays three angles in a triangle
+formed by these three points, as shown in Figure 4.4a. Display the angles in
+degrees. (Hint: Generate a random angle a in radians between 0 and 2p, as shown
+in Figure 4.4b and the point determined by this angle is rxcos (a), rxsin (a).)*/
+
+import java.util.Scanner;
+
+public class P0917to19_0927{
+
+	public static void main(String[] args) {
+		double radius = 40;
+		
+		//generate random three angles alpha
+		int alpha1 = (int)(Math.random() * 361);
+		int alpha2 = (int)(Math.random() * 361);
+		int alpha3 = (int)(Math.random() * 361);
+		
+		//generate three points
+		double x1 = radius * Math.cos( Math.toRadians(alpha1) );
+		double x2 = radius * Math.cos( Math.toRadians(alpha2) );
+		double x3 = radius * Math.cos( Math.toRadians(alpha3) );
+		double y1 = radius * Math.sin( Math.toRadians(alpha1) );
+		double y2 = radius * Math.sin( Math.toRadians(alpha2) );
+		double y3 = radius * Math.sin( Math.toRadians(alpha3) );
+		
+		//calculate three sides 
+		double side1 = Math.sqrt( Math.pow(x3 - x2, 2) + Math.pow(y3 - y2, 2) );
+		double side2 = Math.sqrt( Math.pow(x3 - x1, 2) + Math.pow(y3 - y1, 2) );
+		double side3 = Math.sqrt( Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2) );
+
+		//calculate three angle
+		double angle1 = Math.toDegrees(Math.acos(( Math.pow(side2, 2) + Math.pow(side3, 2) - Math.pow(side1, 2) ) / (2 * side2 * side3)));
+		double angle2 = Math.toDegrees(Math.acos(( Math.pow(side1, 2) + Math.pow(side3, 2) - Math.pow(side2, 2) ) / (2 * side1 * side3)));
+		double angle3 = Math.toDegrees(Math.acos(( Math.pow(side2, 2) + Math.pow(side1, 2) - Math.pow(side3, 2) ) / (2 * side2 * side1)));
+		
+		
+		System.out.printf("%-10s%-10s\n", "angleName", "degrees");
+		System.out.printf("%-10s%-10f\n", "angle1", angle1);
+		System.out.printf("%-10s%-10f\n", "angle2", angle2);
+		System.out.printf("%-10s%-10f\n", "angle3", angle3);
+		
+		
+	}
+}	
