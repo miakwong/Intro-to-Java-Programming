@@ -1,0 +1,26 @@
+/*(Process a string) Write a program that prompts the user to enter a string and
+displays its length and its first character.*/
+
+
+import java.util.Scanner;
+
+public class P0917to19_0927{
+
+	public static void main(String[] args) {
+			Scanner in = new Scanner(System.in);
+		
+		//prompts the user to enter a string
+		System.out.print("Enter a string: ");
+		String s = in.nextLine();
+		
+		//displays its length and its first character
+		int length = s.length();
+		char first = s.charAt(0);
+		System.out.printf( "The length of (%s) is %d and the first character is %c", s, length, first);
+	
+	
+	
+	
+	
+	}
+}	
