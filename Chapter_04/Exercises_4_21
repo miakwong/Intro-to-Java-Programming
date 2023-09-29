@@ -1,0 +1,26 @@
+/*(Check SSN) Write a program that prompts the user to enter a Social Security
+number in the format DDD-DD-DDDD, where D is a digit. Your program should
+check whether the input is valid.*/	
+
+import java.util.Scanner;
+
+public class P0917to19_0927{
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		
+		//prompts the user to enter a Social Security
+		//number in the format DDD-DD-DDDD
+		System.out.print("Enter a SSN: ");
+		String s = in.nextLine();
+		int x1 = s.indexOf('-');
+		int x2 = s.lastIndexOf('-');
+		
+		//check whether the input is valid
+		System.out.println( (x1 == 3 && x2 == 6)? s + " is a valid social security number" :
+			s + " is an invalid social security number" );
+		
+		
+	}
+}	
+		
