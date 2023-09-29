@@ -1,0 +1,16 @@
+		//a vehicle plate number consists
+		//of three uppercase letters followed by four digits
+
+public class P0917_19_0927_28{
+
+	public static void main(String[] args) {
+		char s1 = (char)(65 + (int)(Math.random() * 26));
+		char s2 = (char)(65 + (int)(Math.random() * 26));
+		char s3 = (char)(65 + (int)(Math.random() * 26));
+		int n1 = (int)(Math.random() * 10);
+		int n2 = (int)(Math.random() * 10);
+		int n3 = (int)(Math.random() * 10);
+		int n4 = (int)(Math.random() * 10);
+		System.out.printf( "The plate number is: %c%c%c%d%d%d%d" , s1, s2, s3, n1, n2, n3, n4);
+	}
+}	
