@@ -1,0 +1,41 @@
+		/*(Order three cities) Write a program that prompts the user to enter three cities
+and displays them in ascending order.*/
+
+import java.util.Scanner;
+
+public class P0917_19_0927_28{
+
+	public static void main(String[] args) {
+  	Scanner in = new Scanner(System.in);
+		
+		System.out.print("Enter the first city: ");
+		char ch1 = in.nextLine().charAt(0);
+	
+		System.out.print("Enter the second city: ");
+		char ch2 = in.nextLine().charAt(0);
+		
+		System.out.print("Enter the third city: ");
+		char ch3 = in.nextLine().charAt(0);
+		
+		//calculate alphabetical order
+		
+		char temp = ch1;
+		if ( ch1 < ch2 )	{
+			ch1 = ch2;
+			ch2 = temp;
+		}
+		temp = ch1;
+		if ( ch1 < ch3 )	{
+			ch1 = ch3;
+			ch3 = temp;
+		}
+		temp = ch2;
+		if ( ch2 < ch3 )	{
+			ch2 = ch3;
+			ch3 = temp;
+		}
+		
+		System.out.printf("The three cities in alphabetical order are " + ch3 +  " " + ch2 + " " + ch1);
+	}
+}	
+		
