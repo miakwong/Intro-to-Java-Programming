@@ -1,0 +1,49 @@
+/*(Financial application: payroll) Write a program that reads the following information
+and prints a payroll statement:
+Employee’s name (e.g., Smith)
+Number of hours worked in a week (e.g., 10)
+Hourly pay rate (e.g., 9.75)
+Federal tax withholding rate (e.g., 20%)
+State tax withholding rate (e.g., 9%)*/	
+
+import java.util.Scanner;
+
+public class P0917to19_0927{
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		
+		System.out.print("Employee’s name: ");
+		String name = in.nextLine();
+		
+		System.out.print("Number of hours worked in a week: ");
+		double workHour = in.nextDouble();
+		
+		System.out.print("Hourly pay rate: ");
+		double payRate = in.nextDouble();
+		
+		System.out.print("Federal tax withholding rate: ");
+		double federalTaxRate = in.nextDouble();
+		
+		System.out.print("State tax withholding rate: ");
+		double stateTaxRate = in.nextDouble();
+		
+		double grossPay = workHour * payRate;
+		double federal = federalTaxRate * grossPay;
+		double state = stateTaxRate * grossPay;
+		double totalTax = federal + state;
+		double netPay = grossPay - totalTax;
+		System.out.println(totalTax);
+		
+		System.out.printf(	"Employee Name: %s\nHours Worked: %.1f\nPay Rate: $%.2f\nGross Pay: $%.2f\n"
+				+ "Deductions:\nFederal Withholding (%.2f%%): $%.2f\nState Withholding (%.2f%%): $%.2f\n"
+				+ "Total Deduction: $%.2f\nNet pay: $%.2f", name, workHour, payRate, grossPay, federalTaxRate, 
+				federal, stateTaxRate, state, totalTax, netPay);
+		
+		
+	
+	
+	
+	
+	}
+}	
