@@ -4,7 +4,7 @@ using the Math.random() method.*/
 public class P0917to19_0927{
 
 	public static void main(String[] args) {
-			String s = (char)(55 + (int)(Math.random() * 26)) + "";
+			String s = (char)(65 + (int)(Math.random() * 26)) + "";
 		System.out.println(s);
 	}
 }	
