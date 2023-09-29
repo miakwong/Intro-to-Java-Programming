@@ -1,0 +1,38 @@
+/*(Business: check ISBN-10) Rewrite Programming Exercise 3.9 by entering the
+ISBN number as a string.*/
+
+import java.util.Scanner;
+
+public class P0917to19_0927{
+
+	public static void main(String[] args) {
+	
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Enter the first 9 digits of an ISBN as integer: ");
+		
+		String line = in.nextLine();
+		
+		int d1 = line.charAt(0) - '0';
+		int d2 = line.charAt(1) - '0';
+		int d3 = line.charAt(2) - '0';
+		int d4 = line.charAt(3) - '0';
+		int d5 = line.charAt(4) - '0';
+		int d6 = line.charAt(5) - '0';
+		int d7 = line.charAt(6) - '0';
+		int d8 = line.charAt(7) - '0';
+		int d9 = line.charAt(8) - '0';
+		
+		int d10 = (d1 * 1 + d2 * 2 + d3 * 3 + d4 * 4 + d5 * 5 + d6 * 6 + d7 * 7 + d8 * 8 + d9 * 9) % 11;
+		
+		System.out.println( (d10 == 10)? "The ISBN-10 number is " + line + "X": "The ISBN-10 number is " + line + d10);
+		
+	
+	
+	
+	
+	
+	
+	
+	}
+}	
